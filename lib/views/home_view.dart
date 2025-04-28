@@ -43,7 +43,8 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.only(bottom: 8, top: 8),
+      margin: EdgeInsets.only(bottom: 4.h, top: 4.h),
+      elevation: 5,
       color: Theme.of(context).colorScheme.primaryContainer,
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
@@ -54,11 +55,25 @@ class CustomCard extends StatelessWidget {
         // leading: const Icon(Icons.add_rounded),
         title: Text(
           'Note title',
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+          style: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500,
+            color:
+                Theme.of(context).colorScheme.brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
+          ),
         ),
         subtitle: Text(
           'Note description',
-          style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w400),
+          style: TextStyle(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w400,
+            color:
+                Theme.of(context).colorScheme.brightness == Brightness.light
+                    ? Colors.grey[700]
+                    : Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
         ),
         trailing: IconButton(
           icon: const Icon(Icons.expand_more_rounded),
@@ -82,15 +97,25 @@ class _FloatingActionButton extends StatelessWidget {
     return Align(
       alignment: AlignmentDirectional.bottomCenter,
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 16),
+        padding: EdgeInsets.only(bottom: 16.h),
         child: FloatingActionButton(
           tooltip: 'Add Note',
           elevation: 2,
-          backgroundColor: Theme.of(context).colorScheme.primary,
+          backgroundColor:
+              Theme.of(context).colorScheme.brightness == Brightness.light
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.secondaryFixed,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.r),
           ),
-          child: const Icon(Icons.add_rounded, color: Colors.black),
+          child: Icon(
+            Icons.add_rounded,
+            color:
+                Theme.of(context).colorScheme.brightness == Brightness.light
+                    ? Colors.white
+                    : Theme.of(context).colorScheme.onSecondaryFixed,
+            size: 28.sp,
+          ),
           onPressed: () {},
         ),
       ),
@@ -111,18 +136,42 @@ class CustomAppBar extends StatelessWidget {
           children: [
             Text(
               'Notes',
-              style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.w600),
+              style: TextStyle(
+                fontSize: 32.sp,
+                fontWeight: FontWeight.w600,
+                color:
+                    Theme.of(context).colorScheme.brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors.black,
+              ),
             ),
-            IconButton(
-              icon: const Icon(Icons.search_rounded),
-              onPressed: () {
-                // Add your action here
-              },
-            ),
+            CustomSearchIcon(),
           ],
         ),
-        SizedBox(height: MediaQuery.of(context).size.height / 100),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.01),
       ],
+    );
+  }
+}
+
+class CustomSearchIcon extends StatelessWidget {
+  const CustomSearchIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40.h,
+      width: 45.w,
+      decoration: BoxDecoration(
+        color: Colors.white12,
+        borderRadius: BorderRadius.circular(12.r),
+      ),
+      child: IconButton(
+        icon: const Icon(Icons.search_rounded),
+        onPressed: () {
+          // Add your action here
+        },
+      ),
     );
   }
 }
