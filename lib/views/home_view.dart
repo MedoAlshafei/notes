@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -45,10 +46,20 @@ class CustomCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 8, top: 8),
       color: Theme.of(context).colorScheme.primaryContainer,
       child: ListTile(
-        contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        tileColor: Theme.of(context).colorScheme.primaryContainer,
         // leading: const Icon(Icons.add_rounded),
-        title: const Text('Note title'),
-        subtitle: const Text('Note description'),
+        title: Text(
+          'Note title',
+          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+        ),
+        subtitle: Text(
+          'Note description',
+          style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w400),
+        ),
         trailing: IconButton(
           icon: const Icon(Icons.expand_more_rounded),
           onPressed: () {
@@ -77,7 +88,7 @@ class _FloatingActionButton extends StatelessWidget {
           elevation: 2,
           backgroundColor: Theme.of(context).colorScheme.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
           ),
           child: const Icon(Icons.add_rounded, color: Colors.black),
           onPressed: () {},
@@ -98,9 +109,9 @@ class CustomAppBar extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
+            Text(
               'Notes',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.w600),
             ),
             IconButton(
               icon: const Icon(Icons.search_rounded),
@@ -110,7 +121,7 @@ class CustomAppBar extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: MediaQuery.of(context).size.height / 70),
+        SizedBox(height: MediaQuery.of(context).size.height / 100),
       ],
     );
   }
