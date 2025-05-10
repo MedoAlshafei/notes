@@ -7,10 +7,10 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       // backgroundColor: Colors.transparent,
       body: NotesViewBody(),
-      floatingActionButton: const _FloatingActionButton(),
+      floatingActionButton: _FloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

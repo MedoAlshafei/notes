@@ -13,8 +13,8 @@ class NotesViewBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: MediaQuery.of(context).padding.top),
-          CustomAppBar(),
-          Expanded(child: NotesListView()),
+          const CustomAppBar(),
+          const Expanded(child: NotesListView()),
         ],
       ),
     );

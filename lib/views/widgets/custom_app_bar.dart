@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
                         : Theme.of(context).colorScheme.onSurface,
               ),
             ),
-            CustomSearchIcon(),
+            const CustomSearchIcon(),
           ],
         ),
         SizedBox(height: MediaQuery.of(context).padding.bottom),
