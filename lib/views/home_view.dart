@@ -7,27 +7,14 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.transparent,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         child: Column(
           children: [
+            SizedBox(height: MediaQuery.of(context).padding.top),
             CustomAppBar(),
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisSpacing: 8,
-                  mainAxisSpacing: 8,
-                  crossAxisCount: 2,
-                  childAspectRatio: 1,
-                ),
-                itemBuilder: (context, index) {
-                  return const CustomCard();
-                },
-                itemCount: 10,
-                shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
-              ),
-            ),
+            Expanded(child: NotesListView()),
           ],
         ),
       ),
@@ -37,53 +24,113 @@ class HomeView extends StatelessWidget {
   }
 }
 
-class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
+class NotesListView extends StatelessWidget {
+  const NotesListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.only(bottom: 4.h, top: 4.h),
-      elevation: 5,
-      color: Theme.of(context).colorScheme.primaryContainer,
-      child: ListTile(
-        contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-        tileColor: Theme.of(context).colorScheme.primaryContainer,
-        // leading: const Icon(Icons.add_rounded),
-        title: Text(
-          'Note title',
-          style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w500,
-            color:
-                Theme.of(context).colorScheme.brightness == Brightness.dark
-                    ? Colors.white
-                    : Colors.black,
+    return ListView.builder(
+      physics: const BouncingScrollPhysics(),
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: 4.h),
+          child: CustomCard(
+            cardColor: Theme.of(context).colorScheme.primaryContainer,
           ),
-        ),
-        subtitle: Text(
-          'Note description',
-          style: TextStyle(
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w400,
-            color:
-                Theme.of(context).colorScheme.brightness == Brightness.light
-                    ? Colors.grey[700]
-                    : Theme.of(context).colorScheme.onSurfaceVariant,
+        );
+      },
+    );
+  }
+}
+
+class CustomCard extends StatelessWidget {
+  const CustomCard({super.key, required this.cardColor});
+
+  final Color cardColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(bottom: 8.h, top: 8.h, left: 8.w, right: 8.w),
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.primary.withAlpha(100),
+            blurRadius: 5,
+            offset: const Offset(0, 2),
           ),
-        ),
-        trailing: IconButton(
-          icon: const Icon(Icons.expand_more_rounded),
-          onPressed: () {
-            // Add your action here
-          },
-        ),
-        onTap: () {
-          // Add your action here
-        },
+        ],
+        borderRadius: BorderRadius.circular(16.r),
+        color: cardColor,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          ListTile(
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 10.w,
+              vertical: 4.h,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            tileColor: Theme.of(context).colorScheme.primaryContainer,
+            // leading: const Icon(Icons.add_rounded),
+            title: Text(
+              'Note title',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 26.sp,
+                fontWeight: FontWeight.w500,
+                color:
+                    Theme.of(context).colorScheme.brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors.black,
+              ),
+            ),
+            subtitle: Text(
+              'Note description goes here. This is a sample note description.',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w400,
+                color:
+                    Theme.of(context).colorScheme.brightness == Brightness.light
+                        ? const Color.fromARGB(151, 97, 97, 97)
+                        : Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+            trailing: IconButton(
+              icon: Icon(
+                Icons.delete_rounded,
+                color: Colors.black,
+                size: 28.sp,
+              ),
+              onPressed: () {
+                // Add your action here
+              },
+            ),
+            onTap: () {
+              // Add your action here
+            },
+          ),
+          Text(
+            'May 12, 2023',
+            style: TextStyle(
+              fontFamily: 'Poppins',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w400,
+              color:
+                  Theme.of(context).colorScheme.brightness == Brightness.light
+                      ? const Color.fromARGB(151, 97, 97, 97)
+                      : Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -130,25 +177,26 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: MediaQuery.of(context).padding.top),
+        // SizedBox(height: MediaQuery.of(context).padding.top),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               'Notes',
               style: TextStyle(
+                fontFamily: 'Poppins',
                 fontSize: 32.sp,
                 fontWeight: FontWeight.w600,
                 color:
-                    Theme.of(context).colorScheme.brightness == Brightness.dark
-                        ? Colors.white
-                        : Colors.black,
+                    Theme.of(context).colorScheme.brightness == Brightness.light
+                        ? Theme.of(context).colorScheme.onSurface
+                        : Theme.of(context).colorScheme.onSurface,
               ),
             ),
             CustomSearchIcon(),
           ],
         ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+        SizedBox(height: MediaQuery.of(context).padding.bottom),
       ],
     );
   }
