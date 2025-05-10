@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notes/views/widgets/add_note_bottom_sheet.dart';
 import 'package:notes/views/widgets/notes_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -43,7 +44,14 @@ class _FloatingActionButton extends StatelessWidget {
                     : Theme.of(context).colorScheme.onSecondaryFixed,
             size: 28.sp,
           ),
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return const AddNoteBottomSheet();
+              },
+            );
+          },
         ),
       ),
     );
