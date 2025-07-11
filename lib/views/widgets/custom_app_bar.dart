@@ -7,29 +7,33 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // SizedBox(height: MediaQuery.of(context).padding.top),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Notes',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 32.sp,
-                fontWeight: FontWeight.w600,
-                color:
-                    Theme.of(context).colorScheme.brightness == Brightness.light
-                        ? Theme.of(context).colorScheme.onSurface
-                        : Theme.of(context).colorScheme.onSurface,
+    return Container(
+      color: Theme.of(context).colorScheme.surface,
+      child: Column(
+        children: [
+          // SizedBox(height: MediaQuery.of(context).padding.top),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Notes',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 32.sp,
+                  fontWeight: FontWeight.w600,
+                  color:
+                      Theme.of(context).colorScheme.brightness ==
+                              Brightness.light
+                          ? Theme.of(context).colorScheme.onSurface
+                          : Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            const CustomSearchIcon(),
-          ],
-        ),
-        SizedBox(height: MediaQuery.of(context).padding.bottom),
-      ],
+              const CustomSearchIcon(),
+            ],
+          ),
+          SizedBox(height: MediaQuery.of(context).padding.bottom),
+        ],
+      ),
     );
   }
 }
