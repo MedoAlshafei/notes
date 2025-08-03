@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: MediaQuery.of(context).padding.top),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.05),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
