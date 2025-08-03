@@ -23,8 +23,12 @@ class CustomFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showModalBottomSheet(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          backgroundColor: const Color.fromARGB(255, 66, 0, 0),
           context: context,
-          builder: (context) => AddNoteBottomSheet(),
+          builder: (context) => const AddNoteBottomSheet(),
         );
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
