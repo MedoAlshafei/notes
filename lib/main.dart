@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:notes/constants/colors.dart';
 
 import 'views/notes_view.dart';
 
@@ -28,7 +29,7 @@ class NotesApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
             brightness: Brightness.dark,
             seedColor: Colors.red,
-            surface: const Color.fromARGB(255, 66, 0, 0),
+            surface: kPrimaryColor,
           ),
           floatingActionButtonTheme: FloatingActionButtonThemeData(
             backgroundColor: Colors.red[900],
