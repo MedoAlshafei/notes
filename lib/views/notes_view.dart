@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+import 'package:notes/views/widgets/notes_view_body.dart';
+
+class NotesView extends StatelessWidget {
+  const NotesView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: const NotesViewBody(),
+      floatingActionButton: CustomFloatingActionButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
+}
+
+class CustomFloatingActionButton extends StatelessWidget {
+  const CustomFloatingActionButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {
+        showModalBottomSheet(
+          context: context,
+          builder: (context) => AddNoteBottomSheet(),
+        );
+      },
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      elevation: 4,
+      child: const Icon(Icons.add),
+    );
+  }
+}
+
+class AddNoteBottomSheet extends StatelessWidget {
+  const AddNoteBottomSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}

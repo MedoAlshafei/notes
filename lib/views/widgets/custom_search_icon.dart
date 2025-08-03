@@ -7,18 +7,12 @@ class CustomSearchIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40.h,
-      width: 45.w,
+      padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white12,
-        borderRadius: BorderRadius.circular(12.r),
+        color: Colors.white.withAlpha(30),
+        borderRadius: BorderRadius.circular(16.r),
       ),
-      child: IconButton(
-        icon: const Icon(Icons.search_rounded),
-        onPressed: () {
-          // Add your action here
-        },
-      ),
+      child: Center(child: Icon(Icons.search, color: Colors.grey, size: 24.sp)),
     );
   }
 }

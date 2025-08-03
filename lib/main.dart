@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'views/home_view.dart';
+import 'views/notes_view.dart';
 
 void main() {
   runApp(const NotesApp());
@@ -22,14 +22,21 @@ class NotesApp extends StatelessWidget {
         title: 'notes',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          useMaterial3: true,
+          fontFamily: GoogleFonts.poppins().fontFamily,
           textTheme: GoogleFonts.poppinsTextTheme(),
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.cyan,
-            brightness: Brightness.light,
+            brightness: Brightness.dark,
+            seedColor: Colors.red,
+            surface: const Color.fromARGB(255, 66, 0, 0),
           ),
-          useMaterial3: true,
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: Colors.red[900],
+            foregroundColor: Colors.white,
+            elevation: 4,
+          ),
         ),
-        home: const HomeView(),
+        home: const NotesView(),
       ),
     );
   }

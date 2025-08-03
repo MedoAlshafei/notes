@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notes/views/widgets/custom_app_bar.dart';
 import 'package:notes/views/widgets/notes_list_view.dart';
 
@@ -9,13 +8,9 @@ class NotesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
-        children: [
-          SizedBox(height: MediaQuery.of(context).padding.top),
-          const CustomAppBar(),
-          const Expanded(child: NotesListView()),
-        ],
+        children: [CustomAppBar(), Expanded(child: NoteListView())],
       ),
     );
   }
