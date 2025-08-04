@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontSize: 28.sp,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             const CustomSearchIcon(),

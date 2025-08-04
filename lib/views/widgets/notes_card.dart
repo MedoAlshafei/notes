@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notes/constants/colors.dart';
 
 class NotesCard extends StatelessWidget {
   const NotesCard({super.key});
@@ -8,7 +9,13 @@ class NotesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.red[50],
+        color: kOnPrimaryColor,
+        border: BoxBorder.fromLTRB(
+          top: BorderSide(color: Colors.black, width: 1),
+          left: BorderSide(color: Colors.black, width: 1),
+          right: BorderSide(color: Colors.black, width: 2.5),
+          bottom: BorderSide(color: Colors.black, width: 2.5),
+        ),
         borderRadius: BorderRadius.circular(16.r),
       ),
       child: Column(
@@ -32,18 +39,20 @@ class NotesCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            trailing: IconButton(
-              icon: Icon(Icons.delete, color: Colors.black),
-              onPressed: () {
-                // Handle delete action
-              },
+            trailing: InkWell(
+              child: IconButton(
+                icon: Icon(Icons.delete, color: Colors.black),
+                onPressed: () {
+                  // Handle delete action
+                },
+              ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
               'May12, 2023',
-              style: TextStyle(color: Colors.grey, fontSize: 12.sp),
+              style: TextStyle(color: Colors.grey[850], fontSize: 12.sp),
             ),
           ),
           SizedBox(height: 10.h), // Add some space at the bottom

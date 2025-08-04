@@ -14,7 +14,7 @@ class CustomTextField extends StatelessWidget {
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: TextStyle(color: Colors.white70),
+        hintStyle: TextStyle(color: Colors.grey[800]),
         border: buildBorder(),
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(kSecondaryColor),
@@ -25,7 +25,11 @@ class CustomTextField extends StatelessWidget {
   OutlineInputBorder buildBorder([color]) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(18),
-      borderSide: BorderSide(color: color ?? Colors.white, width: 1.5),
+      borderSide: BorderSide(
+        color: color ?? Colors.black,
+        width: 1.5,
+        style: BorderStyle.solid,
+      ),
     );
   }
 }

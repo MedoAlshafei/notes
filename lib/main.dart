@@ -28,12 +28,12 @@ class NotesApp extends StatelessWidget {
           textTheme: GoogleFonts.poppinsTextTheme(),
           colorScheme: ColorScheme.fromSeed(
             brightness: Brightness.dark,
-            seedColor: Colors.red,
+            seedColor: Colors.grey,
             surface: kPrimaryColor,
           ),
           floatingActionButtonTheme: FloatingActionButtonThemeData(
-            backgroundColor: Colors.red[900],
-            foregroundColor: Colors.white,
+            backgroundColor: Colors.black,
+            foregroundColor: kPrimaryColor,
             elevation: 4,
           ),
         ),

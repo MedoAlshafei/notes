@@ -32,7 +32,10 @@ class CustomFloatingActionButton extends StatelessWidget {
           builder: (context) => const AddNoteBottomSheet(),
         );
       },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+        side: BorderSide(color: Colors.black45),
+      ),
       elevation: 4,
       child: const Icon(Icons.add),
     );
