@@ -1,4 +1,4 @@
-const String appName = 'Notes';
+const String appName = 'Dawnha';
 const String notes = 'Notes';
 const String note = 'Note';
 const String addNote = 'Add Note';

@@ -4,9 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:notes/views/widgets/custom_search_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, required this.title, required this.icon});
 
-  static const nameApp = 'Dawnha';
+  final String title;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +18,14 @@ class CustomAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              nameApp,
+              title,
               style: GoogleFonts.poppins(
                 fontSize: 28.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
-            const CustomSearchIcon(),
+            CustomSearchIcon(icon: icon),
           ],
         ),
       ],
