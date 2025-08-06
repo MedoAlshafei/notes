@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notes/constants/colors.dart';
+import 'package:notes/constants/strings.dart';
 import 'package:notes/views/notes_view.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox(kNotesBox);
+
   runApp(const NotesApp());
 }
 
@@ -19,7 +24,7 @@ class NotesApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
-        title: 'notes',
+        title: appName,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
