@@ -1,16 +1,25 @@
-# notes
+# Dawnha Notes App
 
-A new Flutter project.
+A simple and modern note-taking Flutter application.
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+Dawnha App is a Flutter project designed to help users create, view, and manage notes efficiently. The app features a clean UI, persistent storage, and responsive design.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Add, view, and delete notes
+- Persistent local storage using Hive
+- Responsive UI with adaptive text and layout
+- Custom theming and fonts
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Packages Used
+
+- [`flutter_screenutil`](https://pub.dev/packages/flutter_screenutil): For responsive UI and screen size adaptation.
+- [`google_fonts`](https://pub.dev/packages/google_fonts): To use custom fonts (Poppins) throughout the app.
+- [`hive`](https://pub.dev/packages/hive) & [`hive_flutter`](https://pub.dev/packages/hive_flutter): Lightweight and fast key-value database for local storage.
+- [`flutter_bloc`](https://pub.dev/packages/flutter_bloc): For state management using the BLoC/Cubit pattern (if used in your project).
+
+## Project Architecture
+
+The project follows a modular and scalable architecture:
