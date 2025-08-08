@@ -40,7 +40,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               title = value;
             },
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * 0.03),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
           CustomTextField(
             hint: 'Content',
             maxLines: 5,
@@ -48,7 +48,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subTitle = value;
             },
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * 0.07),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
