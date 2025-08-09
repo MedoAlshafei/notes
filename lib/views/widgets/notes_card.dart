@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notes/cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes/models/note_model.dart';
 import 'package:notes/views/edit_note_view.dart';
 
@@ -49,11 +51,14 @@ class NotesCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              trailing: IconButton(
-                icon: Icon(Icons.delete, color: Colors.black),
-                onPressed: () {
-                  note.delete();
-                },
+              trailing: InkWell(
+                child: IconButton(
+                  icon: Icon(Icons.delete, color: Colors.black),
+                  onPressed: () {
+                    note.delete();
+                    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                  },
+                ),
               ),
             ),
             Padding(
