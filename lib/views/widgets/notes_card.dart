@@ -49,11 +49,11 @@ class NotesCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              trailing: InkWell(
-                child: IconButton(
-                  icon: Icon(Icons.delete, color: Colors.black),
-                  onPressed: () {},
-                ),
+              trailing: IconButton(
+                icon: Icon(Icons.delete, color: Colors.black),
+                onPressed: () {
+                  note.delete();
+                },
               ),
             ),
             Padding(
