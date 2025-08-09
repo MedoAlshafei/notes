@@ -46,7 +46,7 @@ class NotesCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
                 child: Text(
                   note.subTitle,
-                  style: const TextStyle(color: Colors.black54, fontSize: 14),
+                  style: TextStyle(color: Colors.blueGrey[800], fontSize: 14),
                   // maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),
