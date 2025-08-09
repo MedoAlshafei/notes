@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:notes/views/widgets/custom_search_icon.dart';
+import 'package:notes/views/widgets/custom_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title, required this.icon});
+  const CustomAppBar({
+    super.key,
+    required this.title,
+    required this.icon,
+    this.onTap,
+  });
 
   final String title;
   final IconData icon;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,7 @@ class CustomAppBar extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            CustomSearchIcon(icon: icon),
+            CustomIcon(onTap: onTap, icon: icon),
           ],
         ),
       ],
