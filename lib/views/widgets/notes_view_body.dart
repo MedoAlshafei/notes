@@ -25,6 +25,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
+          // TODO: create search logic for search icon
           CustomAppBar(title: appName, icon: Icons.search),
           Expanded(child: NoteListView()),
         ],
