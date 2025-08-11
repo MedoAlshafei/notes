@@ -47,7 +47,7 @@ class NotesCard extends StatelessWidget {
                 child: Text(
                   note.subTitle,
                   style: TextStyle(color: Colors.blueGrey[800], fontSize: 14),
-                  // maxLines: 3,
+                  maxLines: 5,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
