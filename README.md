@@ -5,13 +5,13 @@ A beautiful and intuitive notes application built with Flutter, featuring modern
 ## ✨ Features
 
 ### Core Functionality
-- **📝 Add Notes** - Create new notes with title and content
+- **📝 Add Notes** - Create new notes with a title and content
 - **✏️ Edit Notes** - Update existing notes seamlessly
 - **🗑️ Delete Notes** - Remove notes with a simple tap
 - **💾 Auto-Save** - All changes are automatically saved locally
 
 ### Technical Features
-- **🎨 Beautiful UI** - Modern dark theme with smooth animations
+- **🎨 Beautiful UI** - Modern light theme with smooth animations
 - **📱 Responsive Design** - Optimized for different screen sizes
 - **🔄 State Management** - Powered by Flutter Bloc/Cubit
 - **💿 Local Storage** - Persistent data storage with Hive database
@@ -108,7 +108,7 @@ dev_dependencies:
 
 ### 3. Edit Notes
 - Tap any note to open the edit screen
-- Make changes to title and content
+- Make changes to the title and content
 - Auto-save functionality preserves your edits
 - Navigate back to see updates immediately
 
@@ -119,7 +119,7 @@ dev_dependencies:
 
 ## 🔧 State Management
 
-The app uses **Cubit** pattern for state management:
+The app uses the **Cubit** pattern for state management:
 
 ### AddNoteCubit
 - Handles note creation logic
