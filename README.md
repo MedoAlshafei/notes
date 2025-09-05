@@ -38,11 +38,18 @@ lib/
     ├── notes_view.dart         # The main view displaying the list of notes
     └── widgets/
         ├── add_note_bottom_sheet.dart # Bottom sheet for adding a new note
+        ├── add_note_form.dart         # Form for adding a new note
+        ├── colors_list_view.dart      # List view for selecting note colors
         ├── custom_app_bar.dart        # Reusable custom app bar
         ├── custom_button.dart         # Reusable custom button
+        ├── custom_icon.dart           # Reusable custom icon button
+        ├── custom_snack_bar.dart      # Custom snack bar for notifications
         ├── custom_text_field.dart     # Reusable custom text field
-        ├── notes_card.dart            # Widget for a single note card
-        └── notes_list_view.dart       # Widget to display the list of notes
+        ├── edit_note_colors_list.dart # Color list for the note editing view
+        ├── edit_note_view_body.dart   # Body layout for the edit note view
+        ├── notes_card.dart            # Widget for displaying a single note
+        ├── notes_list_view.dart       # Widget for displaying the list of notes
+        └── notes_view_body.dart       # Body layout for the notes list view
 ```
 
 ## 🛠️ Technologies Used
@@ -51,7 +58,6 @@ lib/
 - **Dart** - Programming language
 - **Flutter Bloc/Cubit** - State management solution
 - **Hive** - Fast, lightweight NoSQL database
-- **Animated Text Kit** - Text animations for splash screen
 - **Modal Progress HUD** - Loading indicators
 
 ## 📦 Dependencies
